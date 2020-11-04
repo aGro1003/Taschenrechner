@@ -1,0 +1,13 @@
+User Stories Taschenrechner
+
+User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich <Ziel/Wunsch/Funktion>, um <Nutzen>
+
+Titel: Addieren
+Story: Als Benutzer möchte ich zwei Gleitkommazahlen eingeben, um deren Summe berechnen zu lassen.
+Akzeptanzkriterien:
+	* Gleitkommazahlen zwischen -10.0 und 100.0 können addiert werden
+
+Status:
+	* Implementiert
+	* Getestet
+	* Erledigt
