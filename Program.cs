@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,15 +20,29 @@ namespace Taschenrechner
             string zweiterSummand = Console.ReadLine();
 
             //Wandel Text in Gleitkommazahlen
-            float ersterSummandalsZahl = Convert.ToSingle(ersterSummand);
-            float zweiterSummandalsZahl = Convert.ToSingle(zweiterSummand);
+            double ersterSummandalsZahl = Convert.ToDouble(ersterSummand);
+            double zweiterSummandalsZahl = Convert.ToDouble(zweiterSummand);
 
             //Berechnung ausführen
-            float summe = ersterSummandalsZahl + zweiterSummandalsZahl;
+            double summe = Addiere(ersterSummandalsZahl, zweiterSummandalsZahl);
 
             Console.WriteLine($"Die Summe beider Summanden ist: {summe}");
-            Console.ReadLine();
+            WarteaufBenutzereingabe();
+        }
 
+        static double Addiere(double ersterSummand, double zweiterSummand)
+            {
+            double summe = ersterSummand + zweiterSummand;
+
+            return summe;
+
+            }
+          
+            
+        static void WarteaufBenutzereingabe()
+        {
+            Console.Write("Zum Beenden bitte Return drücken!");
+            Console.ReadLine();
         }
     }
 }
