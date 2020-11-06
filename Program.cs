@@ -14,10 +14,8 @@ namespace Taschenrechner
             // Als Benutzer möchte ich zwei Gleitkommazahlen eingeben, um deren Summe berechnen zu lassen
             // Floatzahlen sind Zahlen mit Komma...sie sind abe nur bis auf 10 Stellen genau
 
-            Console.Write("Bitte gib den ersten Summanden ein: ");
-            string ersterSummand = Console.ReadLine();
-            Console.Write("Bitte gib den zweiten Summanden ein: ");
-            string zweiterSummand = Console.ReadLine();
+            string ersterSummand = HoleSummanden("Gib den ersten Summanden ein: ");
+            string zweiterSummand = HoleSummanden("Gib den zweiten Summanden ein: ");
 
             //Wandel Text in Gleitkommazahlen
             double ersterSummandalsZahl = Convert.ToDouble(ersterSummand);
@@ -29,16 +27,22 @@ namespace Taschenrechner
             Console.WriteLine($"Die Summe beider Summanden ist: {summe}");
             WarteaufBenutzereingabe();
         }
-
+        // Methode Addieren
         static double Addiere(double ersterSummand, double zweiterSummand)
             {
             double summe = ersterSummand + zweiterSummand;
 
             return summe;
-
             }
-          
-            
+        // Methode Textausgabe  
+        static string HoleSummanden(string ausgabeTxt)
+        {
+            Console.Write(ausgabeTxt);
+            string summand = Console.ReadLine();
+
+            return summand;
+        }
+        // Methode Texteingabe    
         static void WarteaufBenutzereingabe()
         {
             Console.Write("Zum Beenden bitte Return drücken!");
