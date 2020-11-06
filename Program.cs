@@ -14,19 +14,23 @@ namespace Taschenrechner
             // Als Benutzer möchte ich zwei Gleitkommazahlen eingeben, um deren Summe berechnen zu lassen
             // Floatzahlen sind Zahlen mit Komma...sie sind abe nur bis auf 10 Stellen genau
 
-            string ersterSummand = HoleSummanden("Gib den ersten Summanden ein: ");
-            string zweiterSummand = HoleSummanden("Gib den zweiten Summanden ein: ");
+            string ersteZahlalsString = HoleBenutzereingabe("Gib die erste Zahl ein: ");
+            string zweiteZahlalsString = HoleBenutzereingabe("Gib die zweite Zahl ein: ");
 
-            //Wandel Text in Gleitkommazahlen
-            double ersterSummandalsZahl = Convert.ToDouble(ersterSummand);
-            double zweiterSummandalsZahl = Convert.ToDouble(zweiterSummand);
+            string operation = HoleBenutzereingabe("Gib die auszuführende Operation an: (+ oder -)");
+
+            // Wandel Text in Gleitkommazahlen
+            // TODO: Auslagern in Methode, wenn Quellcode umfangreicher ist
+            double ersteZahl = Convert.ToDouble(ersteZahlalsString);
+            double zweiteZahl = Convert.ToDouble(zweiteZahlalsString);
 
             //Berechnung ausführen
-            double summe = Addiere(ersterSummandalsZahl, zweiterSummandalsZahl);
+            double summe = Addiere(ersteZahl, zweiteZahl);
 
             Console.WriteLine($"Die Summe beider Summanden ist: {summe}");
-            WarteaufBenutzereingabe();
+            HoleBenutzereingabe("Zum Beenden bitte Return drücken!");
         }
+
         // Methode Addieren
         static double Addiere(double ersterSummand, double zweiterSummand)
             {
@@ -34,19 +38,23 @@ namespace Taschenrechner
 
             return summe;
             }
+
+        //Methode Subtrahieren
+        static double Subtrahiere(double minuend, double subtrahent)
+        {
+            double differenz = minuend - subtrahent;
+
+            return differenz;
+        }
+
         // Methode Textausgabe  
-        static string HoleSummanden(string ausgabeTxt)
+        static string HoleBenutzereingabe(string ausgabeTxt)
         {
             Console.Write(ausgabeTxt);
             string summand = Console.ReadLine();
 
             return summand;
         }
-        // Methode Texteingabe    
-        static void WarteaufBenutzereingabe()
-        {
-            Console.Write("Zum Beenden bitte Return drücken!");
-            Console.ReadLine();
-        }
+        
     }
 }

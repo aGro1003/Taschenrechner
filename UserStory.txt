@@ -28,5 +28,6 @@ Akzeptanzkriterien:
 	* Das Single Level of Abstraction Prinzip wird eingehalten, oder eine Abweichung ist begründet und dokumentiert
 
 Status:
-	* Offen
+	* Umgesetzt
+	* Erledigt
 	
