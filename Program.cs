@@ -25,9 +25,23 @@ namespace Taschenrechner
             double zweiteZahl = Convert.ToDouble(zweiteZahlalsString);
 
             //Berechnung ausführen
-            double summe = Addiere(ersteZahl, zweiteZahl);
+            double ergebnis = 0;
+            if (operation == "+")
+            {
+                ergebnis = Addiere(ersteZahl, zweiteZahl);
+                Console.WriteLine($"Die Summer beider Zahlen ist {ergebnis}");
+            }
+            else if (operation == "-")
+            {
+                ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
+                Console.WriteLine($"Die Differenz beider Zahlen ist {ergebnis}");
+            }
+            else
+            {
+                Console.WriteLine("Falscher Operator. Ungültige Eingabe!");
+            }
+            
 
-            Console.WriteLine($"Die Summe beider Summanden ist: {summe}");
             HoleBenutzereingabe("Zum Beenden bitte Return drücken!");
         }
 
