@@ -26,20 +26,27 @@ namespace Taschenrechner
 
             //Berechnung ausführen
             double ergebnis = 0;
-            if (operation == "+")
+
+            switch (operation)
             {
-                ergebnis = Addiere(ersteZahl, zweiteZahl);
-                Console.WriteLine($"Die Summer beider Zahlen ist {ergebnis}");
+                case "+":
+                    ergebnis = Addiere(ersteZahl, zweiteZahl);
+                    Console.WriteLine($"Die Summer beider Zahlen ist {ergebnis}");
+                    break;
+                case "-":
+                    ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
+                    Console.WriteLine($"Die Differenz beider Zahlen ist {ergebnis}");
+                    break;
+                case "/":
+                case "*":
+                    Console.WriteLine("Diese Operation kommt demnächst!");
+                    break;
+
+                default:
+                    Console.WriteLine("Falscher Operator. Ungültige Eingabe!");
+                    break;
             }
-            else if (operation == "-")
-            {
-                ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
-                Console.WriteLine($"Die Differenz beider Zahlen ist {ergebnis}");
-            }
-            else
-            {
-                Console.WriteLine("Falscher Operator. Ungültige Eingabe!");
-            }
+            
             
 
             HoleBenutzereingabe("Zum Beenden bitte Return drücken!");
