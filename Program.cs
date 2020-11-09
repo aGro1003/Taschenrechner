@@ -33,13 +33,15 @@ namespace Taschenrechner
                     ergebnis = Addiere(ersteZahl, zweiteZahl);
                     Console.WriteLine($"Die Summer beider Zahlen ist {ergebnis}");
                     break;
+
                 case "-":
                     ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
                     Console.WriteLine($"Die Differenz beider Zahlen ist {ergebnis}");
                     break;
-                case "/":
+
                 case "*":
-                    Console.WriteLine("Diese Operation kommt demnächst!");
+                    ergebnis = Multiplikation(ersteZahl, zweiteZahl);
+                    Console.WriteLine($"Das Produkt beider Zahlen ist {ergebnis}");
                     break;
 
                 default:
@@ -66,6 +68,14 @@ namespace Taschenrechner
             double differenz = minuend - subtrahent;
 
             return differenz;
+        }
+
+        // Methode Multiplizieren
+        static double Multiplikation (double ersterFaktor, double zweiterFaktor)
+        {
+            double produkt = ersterFaktor * zweiterFaktor;
+
+            return produkt;
         }
 
         // Methode Textausgabe  
